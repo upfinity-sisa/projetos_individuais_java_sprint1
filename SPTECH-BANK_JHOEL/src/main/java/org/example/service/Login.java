@@ -1,4 +1,7 @@
-package org.example;
+package org.example.service;
+
+import org.example.model.DadosMock;
+import org.example.util.Utils;
 
 import java.util.Scanner;
 
@@ -19,8 +22,8 @@ public class Login {
         if (opcao == 1){
             System.out.print("E-mail: ");
             email = leitorTexto.nextLine();
-            if (!email.contains("@gmail.com") || email.contains(" ")) {
-                System.out.println("Digite um e-mail valido ex: sptech@gmail.com");
+            if (!Utils.validarEmail(email)) {
+                System.out.println("Digite um e-mail válido ex: sptech@gmail.com");
                 menuLogin();
             }
         } else if (opcao == 2) {
