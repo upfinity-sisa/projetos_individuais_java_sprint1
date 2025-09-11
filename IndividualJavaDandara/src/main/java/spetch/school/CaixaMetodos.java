@@ -1,11 +1,10 @@
 package spetch.school;
 
-import java.text.DecimalFormat;
 import java.util.Scanner;
 
 class CaixaMetodos {
 
-     void telaBoasVindas() {
+    void telaBoasVindas() {
         Scanner sc = new Scanner(System.in);
         System.out.println("╔══════════════════════════════════════╗");
         System.out.println("║                                      ║");
@@ -33,10 +32,10 @@ class CaixaMetodos {
     double saldo = 1000.0;
     String[] extrato = new String[10];
     Integer indice = 0;
-    DecimalFormat df = new DecimalFormat("0.00");
+
 
     void consultarSaldo() {
-        System.out.println("Saldo atual: R$ " + df.format(saldo));
+        System.out.println("Saldo atual: R$ " + saldo);
         if (saldo < 50) {
             System.out.println("⚠ Atenção: saldo baixo!");
         }
@@ -48,7 +47,7 @@ class CaixaMetodos {
             return;
         }
         saldo += valor;
-        registrarExtrato("Depósito: R$ " + df.format(valor));
+        registrarExtrato("Depósito: R$ " + valor);
         System.out.println("Depósito realizado com sucesso!");
     }
 
@@ -70,7 +69,7 @@ class CaixaMetodos {
             return;
         }
         saldo -= valor;
-        registrarExtrato("Saque: R$ " + df.format(valor));
+        registrarExtrato("Saque: R$ " + valor);
         System.out.println("Saque realizado com sucesso!");
     }
 
